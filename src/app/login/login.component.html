@@ -1,0 +1,29 @@
+<div class="page-content">
+  <h6 class="mdl-dialog__title">Login</h6>
+  <div class="mdl-dialog__content">
+    <div [formGroup]="loginForm">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input formControlName="nome" class="mdl-textfield__input">
+        <label class="mdl-textfield__label">Digite seu usuário</label>
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input formControlName="senha" class="mdl-textfield__input">
+        <label class="mdl-textfield__label">Digite sua senha</label>
+      </div>
+    </div>
+    <span class="">
+      <span class="mdl-chip__text">
+        <i class="material-icons">info</i>
+      </span>
+    </span>
+    <p class="mdl-tooltip">
+      Seu usuário é sua matrícula.
+    </p>
+    <a href=""> Esqueci minha senha!</a>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button onclick="logar()" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Acessar</button>
+    <button type="button" class="mdl-button close">Fechar</button>
+  </div>
+</div>

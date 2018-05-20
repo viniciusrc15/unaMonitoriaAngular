@@ -1,0 +1,53 @@
+<!-- CONTENT -->
+<div class="page-content">
+  <!-- MDL GRID -->
+  <div class="mdl-grid">
+    <!-- MDL CELL COL -->
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+      <div class="centralizar row" [formGroup]="formPesquisa">
+        <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width: 200px;">
+          <select formControlName="curso">
+            <option *ngFor="let curso of cursos" value="{{curso.id_curso}}">{{curso.nome}}</option>
+          </select>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 400px; margin: 0 10px;">
+          <input placeholder="Nome disciplina" formControlName="disciplina" class="mdl-textfield__input" type="text">
+        </div>
+        <button (click)="pesquisaMonitorias()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+          <i class="material-icons">
+            search
+          </i> Pesquisar
+        </button>
+      </div>
+    </div>
+
+    <div style="width: 100%" *ngIf="monitorias">
+      <div *ngFor="let monitoria of monitorias" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--12-col-phone">
+        <!-- CARD -->
+        <div class="mdl-card mdl-shadow--2dp card-monitoria">
+          <div class="mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">Monitoria: {{monitoria.disciplina}}</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <hr/>
+            <b>Monitor:</b> {{monitoria.monitor}}
+            <br/>
+            <b>Data/Horario: {{monitoria.horario | date: 'dd/MM/yy H:mm'}}</b> -
+            <br/>
+            <b>Sala: </b> {{monitoria.localizacao}}
+          </div>
+          <!-- <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="assets/files/mtr_calc.pdf" target="_blank">
+                Ver detalhes
+              </a>
+            </div> -->
+        </div>
+      </div>
+      <!-- MDL CELL COL -->
+      <!-- CARD -->
+    </div>
+    <!-- MDL CELL COL -->
+  </div>
+  <!-- MDL GRID -->
+</div>
+<!-- CONTENT -->

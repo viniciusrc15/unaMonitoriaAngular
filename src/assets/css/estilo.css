@@ -1,0 +1,40 @@
+.card-monitoria{
+  	width: 100%;
+}
+.texto-justificado{
+	text-align: justify;
+}
+.col-width-margin{
+
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.footer-bg-color{
+	background-color: #f44336;
+}
+.pic-resize-footer{
+	width: 50ox;
+	height: 64px;
+}
+
+.tamanho-modal{
+	width: 80% !important;
+}
+.centralizar{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.column{
+	flex-direction: column;	
+}
+.row{
+	flex-direction: row;
+}
+.mdl-textfield{
+	width: 90%;
+}
+
+.alinhar-direita{
+	float: right;
+}

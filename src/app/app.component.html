@@ -1,0 +1,42 @@
+<!-- MDL LAYOUT -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Monitoria UNA</span>
+      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <!-- LOGO -->
+    <span class="mdl-layout-title">
+      <a href="index.html">
+        <img src="assets/logo.png" alt="" width="100%" height="100%">
+      </a>
+    </span>
+    <!-- LOGO -->
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" routerLink="/login" routerLinkActive="active">
+        <i class="material-icons">person_pin</i> Entrar</a>
+      <a class="mdl-navigation__link" routerLink="/pesquisa" routerLinkActive="active">
+        <i class="material-icons">info_outline</i> Pesquisar monitorias</a>
+      <a class="mdl-navigation__link" routerLink="/sobre" routerLinkActive="active">
+        <i class="material-icons">info_outline</i> Sobre</a>
+      <a class="mdl-navigation__link" routerLink="/ajuda" routerLinkActive="active">
+        <i class="material-icons">help</i> Ajuda</a>
+      <br/>
+      <a class="mdl-navigation__link" routerLink="/versao" routerLinkActive="active">
+        <i class="material-icons">history</i> Versão 1.1.0</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <router-outlet></router-outlet>
+  </main>
+  <!-- FOOTER -->
+  <app-footer></app-footer>
+  <!-- FOOTER -->
+</div>
