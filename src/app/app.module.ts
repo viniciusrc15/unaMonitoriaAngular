@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -26,7 +27,7 @@ import { VersaoComponent } from './versao/versao.component';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    // MaterialModule.forRoot(),
+    SharedModule,
     ReactiveFormsModule
   ],
   providers: [BaseService, FormBuilder ],

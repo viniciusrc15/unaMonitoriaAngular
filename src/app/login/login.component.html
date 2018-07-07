@@ -1,5 +1,5 @@
-<div class="page-content">
-  <h6 class="mdl-dialog__title">Login</h6>
+<div >
+  <h6 class="basePadding">Login</h6>
   <div class="mdl-dialog__content">
     <div [formGroup]="loginForm">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -23,7 +23,6 @@
     <a href=""> Esqueci minha senha!</a>
   </div>
   <div class="mdl-dialog__actions">
-    <button onclick="logar()" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Acessar</button>
-    <button type="button" class="mdl-button close">Fechar</button>
+    <button [disabled]="!loginForm.valid" (click)="logar()" type="submit" class="center mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Acessar</button>
   </div>
 </div>

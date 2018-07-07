@@ -1,8 +1,7 @@
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -14,10 +13,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginFormFields = {
-      nome: [''],
-      senha: ['']
-    }
+      nome: ['', Validators.required],
+      senha: ['', Validators.required]
+    };
     this.loginForm = this.fb.group(this.loginFormFields);
   }
 
+  logar() {
+    console.log(this.loginForm.value);
+  }
 }
