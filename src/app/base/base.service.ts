@@ -3,34 +3,44 @@ import { Headers, Http } from '@angular/http';
 
 @Injectable()
 export class BaseService {
+  urlApi = 'http://localhost:3000/api';
 
   constructor(private http: Http) { }
 
-  consultaCursos(){
-    //var cabecalho = new Headers({ 'Content-Type': 'application/json' });
+  consultaCursos() {
+    // var cabecalho = new Headers({ 'Content-Type': 'application/json' });
     return this.http
-      .get('http://localhost:8100/api/course')
+      .get(`${this.urlApi}/course`)
       .toPromise()
       .then(res => res)
       .catch(this.handleError);
   }
 
-  consultaMonitoria(parametros){
-    console.log(parametros);
-    if (parametros.disciplina == ""){
+  consultaMonitoria(parametros) {
+    if (parametros.disciplina === '') {
       return this.http
-      .get('http://localhost:8100/api/monitoring/' + parametros.curso)
-      .toPromise()
-      .then(res => res)
-      .catch(this.handleError);
+        .get(`${this.urlApi}/monitoring/${parametros.curso}`)
+        .toPromise()
+        .then(res => res)
+        .catch(this.handleError);
     } else {
       return this.http
-      .get('http://localhost:8100/api/monitoring/' + parametros.curso + '/' + parametros.disciplina)
+        .get(`${this.urlApi}/monitoring/${parametros.curso}/${parametros.disciplina}`)
+        .toPromise()
+        .then(res => res)
+        .catch(this.handleError);
+    }
+
+  }
+
+  login(data) {
+    const cabecalho = new Headers();
+    cabecalho.set('Content-Type', 'application/json');
+    return this.http
+      .post(`${this.urlApi}/login/`, data, {headers: cabecalho})
       .toPromise()
       .then(res => res)
       .catch(this.handleError);
-    }
-    
   }
 
   private handleError(error: any): Promise<any> {

@@ -1,3 +1,4 @@
+import { BaseService } from './../base/base.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,17 +10,23 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loginFormFields: any;
 
-  constructor(public fb: FormBuilder) { }
+  constructor(public fb: FormBuilder, private baseSrv: BaseService) { }
 
   ngOnInit() {
     this.loginFormFields = {
-      nome: ['', Validators.required],
+      usuario: ['', Validators.required],
       senha: ['', Validators.required]
     };
     this.loginForm = this.fb.group(this.loginFormFields);
   }
 
   logar() {
-    console.log(this.loginForm.value);
+    this.baseSrv.login(this.loginForm.value)
+    .then(res => {
+      alert('logado');
+    })
+    .catch(e => {
+      alert('usuario e senha invalido');
+    });
   }
 }

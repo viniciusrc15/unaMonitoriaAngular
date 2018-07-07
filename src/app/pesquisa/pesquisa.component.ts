@@ -10,7 +10,7 @@ import { BaseService } from '../base/base.service';
 
 export class PesquisaComponent implements OnInit {
   formPesquisa: FormGroup;
-  pesquisaFormFields: any
+  pesquisaFormFields: any;
   public cursos: any;
   public monitorias: any;
 
@@ -32,10 +32,8 @@ export class PesquisaComponent implements OnInit {
     this.pesquisaFormFields = {
       disciplina: [''],
       curso: ['']
-    }
+    };
     this.formPesquisa = this.fb.group(this.pesquisaFormFields);
-
-
   }
 
   pesquisaMonitorias() {
@@ -48,10 +46,6 @@ export class PesquisaComponent implements OnInit {
       .catch(erro => {
         console.log(erro);
       });
-  }
 
-  chamaModal() {
-    console.log("teste");
   }
-
 }
