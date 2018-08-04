@@ -1,3 +1,4 @@
+import { BasePage } from './basepage.component';
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
@@ -6,6 +7,17 @@ export class BaseService {
   urlApi = 'http://localhost:3000/api';
 
   constructor(private http: Http) { }
+
+  private getToken() {
+    return localStorage.getItem('token');
+  }
+
+  montaCabecalho() {
+    const cabecalho = new Headers();
+    cabecalho.set('Content-Type', 'application/json');
+    cabecalho.set('token', this.getToken());
+    return cabecalho;
+  }
 
   consultaCursos() {
     // var cabecalho = new Headers({ 'Content-Type': 'application/json' });
@@ -37,7 +49,7 @@ export class BaseService {
     const cabecalho = new Headers();
     cabecalho.set('Content-Type', 'application/json');
     return this.http
-      .post(`${this.urlApi}/login/`, data, {headers: cabecalho})
+      .post(`${this.urlApi}/login/`, data, { headers: cabecalho })
       .toPromise()
       .then(res => res)
       .catch(this.handleError);

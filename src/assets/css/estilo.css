@@ -1,3 +1,10 @@
+.basePadding{
+    padding: 20px;
+}
+.center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 .card-monitoria{
   	width: 100%;
 }

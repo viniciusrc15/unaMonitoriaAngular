@@ -2,6 +2,7 @@ import { BasePage } from './../base/basepage.component';
 import { BaseService } from './../base/base.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './login.component.html',
@@ -11,7 +12,10 @@ export class LoginComponent extends BasePage implements OnInit {
   loginForm: FormGroup;
   loginFormFields: any;
 
-  constructor(public fb: FormBuilder, private baseSrv: BaseService) {
+  constructor(
+    public fb: FormBuilder,
+    private baseSrv: BaseService,
+    public router: Router) {
     super();
    }
 
@@ -27,6 +31,7 @@ export class LoginComponent extends BasePage implements OnInit {
     this.baseSrv.login(this.loginForm.value)
     .then(res => {
       this.dataLogged(res);
+      this.router.navigate(['/pesquisa']);
     })
     .catch(e => {
       alert('usuario e senha inv');

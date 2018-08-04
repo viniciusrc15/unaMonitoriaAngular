@@ -7,21 +7,10 @@ export class BasePage {
 
     }
 
-    montaCabecalho() {
-        const cabecalho = new Headers();
-        cabecalho.set('Content-Type', 'application/json');
-        cabecalho.set('token', this.getToken());
-        return cabecalho;
-    }
-
     setToken(data) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('usuario', data.usuario);
         this.autenticado = true;
-    }
-
-    private getToken() {
-        return localStorage.getItem('token');
     }
 
     isLogged() {

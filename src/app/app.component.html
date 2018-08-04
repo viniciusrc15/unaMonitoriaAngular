@@ -21,9 +21,13 @@
     <!-- LOGO -->
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" *ngIf="!isLogged()" routerLink="/login" routerLinkActive="active">
-        <i class="material-icons">person_pin</i> Entrar</a>
+        <i class="material-icons">input</i> Entrar</a>
       <a class="mdl-navigation__link" routerLink="/pesquisa" routerLinkActive="active">
-        <i class="material-icons">info_outline</i> Pesquisar monitorias</a>
+        <i class="material-icons">search</i> Pesquisar monitorias</a>
+      <a class="mdl-navigation__link" *ngIf="isLogged()" routerLink="/cadastrar-monitoria" routerLinkActive="active">
+        <i class="material-icons">plus_one</i> Cadastar monitoria</a>
+      <!-- <a class="mdl-navigation__link" routerLink="/pesquisa" routerLinkActive="active">
+          <i class="material-icons">info_outline</i> Editar monitorias</a> -->
       <a class="mdl-navigation__link" routerLink="/sobre" routerLinkActive="active">
         <i class="material-icons">info_outline</i> Sobre</a>
       <a class="mdl-navigation__link" routerLink="/ajuda" routerLinkActive="active">

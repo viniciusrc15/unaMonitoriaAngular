@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { VersaoComponent } from './versao/versao.component';
 import { BaseModule } from './base/base.module';
+import { ControlaMonitoriaComponent } from './controla-monitoria/controla-monitoria.component';
+import { MonitoresModule } from './monitores/monitores.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { BaseModule } from './base/base.module';
     PesquisaComponent,
     FooterComponent,
     AjudaComponent,
-    VersaoComponent
+    VersaoComponent,
+    ControlaMonitoriaComponent
   ],
   imports: [
     BrowserModule,
     BaseModule,
     HttpModule,
+    MonitoresModule,
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule

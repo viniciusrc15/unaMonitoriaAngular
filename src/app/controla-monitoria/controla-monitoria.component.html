@@ -1,0 +1,37 @@
+<!-- CONTENT -->
+<div class="page-content">
+
+  <div class="row basePadding">
+    <form class="col s12" [formGroup]="monitoriaForm">
+      <div class="row">
+        <div class="input-field col s12 basePadding">
+          <label>Monitores: </label>
+          <select formControlName="monitor_id_monitor">
+            <option *ngFor="let monitor of monitores" value="{{monitor.id_monitor}}">{{monitor.nome}}</option>
+          </select>
+        </div>
+        <div class="input-field col s12 basePadding">
+          <label>Disciplinas: </label>
+          <select formControlName="disciplina_id_disciplina">
+            <option *ngFor="let disciplina of disciplinas" value="{{disciplina.id_disciplina}}">{{disciplina.nome}}</option>
+          </select>
+        </div>
+        <div class="input-field basePadding">
+          <input placeholder="Localização" formControlName="localizacao" class="mdl-textfield__input" type="text">
+        </div>
+        <div class="input-field basePadding">
+          <input placeholder="Horario" formControlName="horario" class="mdl-textfield__input" type="text">
+        </div>
+        <div class="basePadding">
+          <button (click)="cadastrarMonitoria()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <i class="material-icons">
+              done
+            </i> Cadastrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- MDL GRID -->
+</div>
+<!-- CONTENT -->
