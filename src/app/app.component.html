@@ -28,8 +28,8 @@
         <i class="material-icons">info_outline</i> Sobre</a>
       <a class="mdl-navigation__link" routerLink="/ajuda" routerLinkActive="active">
         <i class="material-icons">help</i> Ajuda</a>
-      <a class="mdl-navigation__link" *ngIf="verifyLogged" (click)="dislodge()">
-        <i class="material-icons">logoff</i> Sair</a>
+      <a class="mdl-navigation__link" *ngIf="isLogged()" (click)="dislodge()">
+        <i class="material-icons">exit_to_app </i> Sair</a>
       <br/>
       <a class="mdl-navigation__link" routerLink="/versao" routerLinkActive="active">
         <i class="material-icons">history</i> Versão 1.1.0</a>

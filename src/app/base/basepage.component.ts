@@ -27,6 +27,7 @@ export class BasePage {
     isLogged() {
         const verify = (localStorage.getItem('token') === null) ? false : true;
         this.logged.emit(verify);
+        return verify;
     }
 
     makeLogoff() {

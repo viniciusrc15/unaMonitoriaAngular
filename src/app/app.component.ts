@@ -2,6 +2,7 @@ import { BasePage } from './base/basepage.component';
 import { LoginComponent } from './login/login.component';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AppComponent extends BasePage {
   verifyLogged: Boolean;
 
-  constructor() {
+  constructor(public router: Router) {
     super();
     this.logged.subscribe(autenticou => {
       this.verifyLogged = autenticou;
@@ -21,6 +22,7 @@ export class AppComponent extends BasePage {
   dislodge() {
     this.makeLogoff();
     this.verifyLogged = false;
+    this.router.navigate(['/pesquisa']);
   }
 
 }
