@@ -20,7 +20,7 @@
     </span>
     <!-- LOGO -->
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" routerLink="/login" routerLinkActive="active">
+      <a class="mdl-navigation__link" *ngIf="!isLogged()" routerLink="/login" routerLinkActive="active">
         <i class="material-icons">person_pin</i> Entrar</a>
       <a class="mdl-navigation__link" routerLink="/pesquisa" routerLinkActive="active">
         <i class="material-icons">info_outline</i> Pesquisar monitorias</a>
