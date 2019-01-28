@@ -34,7 +34,7 @@ export class LoginComponent extends BasePage implements OnInit {
       this.router.navigate(['/pesquisa']);
     })
     .catch(e => {
-      alert('usuario e senha inv');
+      alert('usuario e senha inválidos');
     });
   }
 
@@ -45,5 +45,6 @@ export class LoginComponent extends BasePage implements OnInit {
       usuario: this.loginForm.value.usuario
     };
     this.setToken(data);
+    this.router.navigate(['/pesquisa']);
   }
 }
