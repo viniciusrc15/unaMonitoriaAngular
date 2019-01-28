@@ -1,7 +1,5 @@
 import { BasePage } from './base/basepage.component';
-import { LoginComponent } from './login/login.component';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
