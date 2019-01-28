@@ -1,12 +1,15 @@
 import { BasePage } from './basepage.component';
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
-export class BaseService {
+export class BaseService extends BasePage {
   urlApi = 'http://localhost:3000/api';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    super();
+  }
 
   private getToken() {
     return localStorage.getItem('token');
@@ -20,7 +23,7 @@ export class BaseService {
   }
 
   consultaCursos() {
-    // var cabecalho = new Headers({ 'Content-Type': 'application/json' });
+    // return this.http.get(`${this.urlApi}/course`);
     return this.http
       .get(`${this.urlApi}/course`)
       .toPromise()

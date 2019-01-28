@@ -18,14 +18,17 @@ export class PesquisaComponent implements OnInit {
     this.cursos = [];
     this.srv.consultaCursos()
       .then(resultado => {
-
-        console.log(resultado);
         this.cursos = JSON.parse(resultado._body);
-        console.log(this.cursos);
-
-      }).catch(erro => {
-        console.log(erro);
+      }).catch(e => {
+        this.cursos = [];
       });
+    /*.subscribe(resultado => {
+      if (resultado.ok) {
+        this.cursos = JSON.parse(resultado._body);
+
+      } else {
+      }
+    });*/
   }
 
   ngOnInit(): void {
@@ -37,7 +40,6 @@ export class PesquisaComponent implements OnInit {
   }
 
   pesquisaMonitorias() {
-    console.log(this.formPesquisa);
     this.srv.consultaMonitoria(this.formPesquisa.value)
       .then(resul => {
         console.log(resul);
