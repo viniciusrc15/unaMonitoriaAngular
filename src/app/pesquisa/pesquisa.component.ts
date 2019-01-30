@@ -42,7 +42,6 @@ export class PesquisaComponent implements OnInit {
   pesquisaMonitorias() {
     this.srv.consultaMonitoria(this.formPesquisa.value)
       .then(resul => {
-        console.log(resul);
         this.monitorias = JSON.parse((resul._body));
       })
       .catch(erro => {

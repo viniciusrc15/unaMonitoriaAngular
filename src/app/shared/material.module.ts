@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSelectModule, MatDialogModule,
+import {
+  MatSelectModule, MatDialogModule,
   MatAutocompleteModule, MatInputModule, MatMenuModule,
   MatButtonModule, MatIconModule, MatCardModule, MatRadioModule,
   MatListModule, MatTabsModule, MatDatepickerModule, MatTableModule, MatStepperModule, MatChipsModule,
-  MatSlideToggleModule, MatExpansionModule, MatSliderModule } from '@angular/material';
+  MatSlideToggleModule, MatExpansionModule, MatSliderModule
+} from '@angular/material';
 
 
 @NgModule({
@@ -24,4 +25,4 @@ import { MatSelectModule, MatDialogModule,
     MatSlideToggleModule, MatExpansionModule, MatSliderModule
   ]
 })
-export class MaterialModule {}
+export class MaterialModule { }

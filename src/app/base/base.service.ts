@@ -52,7 +52,7 @@ export class BaseService extends BasePage {
     const cabecalho = new Headers();
     cabecalho.set('Content-Type', 'application/json');
     return this.http
-      .post(`${this.urlApi}/login/`, data, { headers: cabecalho })
+      .post(`${this.urlApi}/admin/login/`, data, { headers: cabecalho })
       .toPromise()
       .then(res => res)
       .catch(this.handleError);

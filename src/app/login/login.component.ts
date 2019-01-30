@@ -39,7 +39,6 @@ export class LoginComponent extends BasePage implements OnInit {
   }
 
   private dataLogged(res) {
-    console.log(res.headers.get('Access-Token'));
     const data = {
       token: res.headers.get('Access-Token'),
       usuario: this.loginForm.value.usuario

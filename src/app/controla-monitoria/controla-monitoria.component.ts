@@ -43,6 +43,6 @@ export class ControlaMonitoriaComponent implements OnInit {
   }
 
   cadastrarMonitoria() {
-    console.log(this.monitoriaForm.value);
+
   }
 }
