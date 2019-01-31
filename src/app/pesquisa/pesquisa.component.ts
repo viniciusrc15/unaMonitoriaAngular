@@ -34,7 +34,7 @@ export class PesquisaComponent implements OnInit {
   ngOnInit(): void {
     this.pesquisaFormFields = {
       disciplina: [''],
-      curso: ['']
+      curso: [null, Validators.required]
     };
     this.formPesquisa = this.fb.group(this.pesquisaFormFields);
   }
@@ -45,7 +45,7 @@ export class PesquisaComponent implements OnInit {
         this.monitorias = JSON.parse((resul._body));
       })
       .catch(erro => {
-        console.log(erro);
+        this.monitorias = [];
       });
 
   }

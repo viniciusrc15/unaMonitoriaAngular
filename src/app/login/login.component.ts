@@ -3,6 +3,7 @@ import { BaseService } from './../base/base.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   templateUrl: './login.component.html',
@@ -15,9 +16,10 @@ export class LoginComponent extends BasePage implements OnInit {
   constructor(
     public fb: FormBuilder,
     private baseSrv: BaseService,
-    public router: Router) {
+    public router: Router,
+    public matSnackBar: MatSnackBar) {
     super();
-   }
+  }
 
   ngOnInit() {
     this.loginFormFields = {
@@ -29,13 +31,18 @@ export class LoginComponent extends BasePage implements OnInit {
 
   logar() {
     this.baseSrv.login(this.loginForm.value)
-    .then(res => {
-      this.dataLogged(res);
-      this.router.navigate(['/pesquisa']);
-    })
-    .catch(e => {
-      alert('usuario e senha inválidos');
-    });
+      .then(res => {
+        this.dataLogged(res);
+        this.matSnackBar.open('Logado com sucesso!', 'Fechar', {
+          duration: 2000,
+        });
+        this.router.navigate(['/pesquisa']);
+      })
+      .catch(e => {
+        this.matSnackBar.open('Usuário e senha incorretos!', 'Fechar', {
+          duration: 2000,
+        });
+      });
   }
 
   private dataLogged(res) {

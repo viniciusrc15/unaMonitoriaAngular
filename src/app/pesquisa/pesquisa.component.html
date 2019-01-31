@@ -13,7 +13,7 @@
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 400px; margin: 0 10px;">
           <input placeholder="Nome disciplina" formControlName="disciplina" class="mdl-textfield__input" type="text">
         </div>
-        <button (click)="pesquisaMonitorias()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        <button [disabled]="!formPesquisa.valid" (click)="pesquisaMonitorias()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           <i class="material-icons">
             search
           </i> Pesquisar
@@ -29,11 +29,11 @@
             <h2 class="mdl-card__title-text">Monitoria: {{monitoria.disciplina}}</h2>
           </div>
           <div class="mdl-card__supporting-text">
-            <hr/>
+            <hr />
             <b>Monitor:</b> {{monitoria.monitor}}
-            <br/>
+            <br />
             <b>Data/Horario: {{monitoria.horario | date: 'dd/MM/yy H:mm'}}</b> -
-            <br/>
+            <br />
             <b>Sala: </b> {{monitoria.localizacao}}
           </div>
           <!-- <div class="mdl-card__actions mdl-card--border">
@@ -41,6 +41,11 @@
                 Ver detalhes
               </a>
             </div> -->
+        </div>
+      </div>
+      <div *ngIf="monitorias && monitorias.length===0">
+        <div class="mdl-card__supporting-text col-width-margin" [style.text-align]="'center'">
+         <b>Não foram cadastradas monitorias para este curso ainda!</b>
         </div>
       </div>
       <!-- MDL CELL COL -->

@@ -1,7 +1,7 @@
-<div >
+<div>
   <h6 class="basePadding">Login</h6>
   <div class="mdl-dialog__content">
-    <div [formGroup]="loginForm">
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="logar()">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input formControlName="usuario" class="mdl-textfield__input" placeholder="Digite seu usuário">
       </div>
@@ -9,18 +9,20 @@
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input formControlName="senha" class="mdl-textfield__input" type="password" placeholder="Digite sua senha">
       </div>
-    </div>
-    <span class="">
-      <span class="mdl-chip__text">
-        <i class="material-icons">info</i>
-      </span>
-    </span>
-    <p class="mdl-tooltip">
-      Seu usuário é sua matrícula.
-    </p>
-    <a href=""> Esqueci minha senha!</a>
-  </div>
-  <div class="mdl-dialog__actions">
-    <button [disabled]="!loginForm.valid" (click)="logar()" type="submit" class="center mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Acessar</button>
+      <!-- <span class="">
+        <span class="mdl-chip__text">
+          <i class="material-icons">info</i>
+        </span>
+      </span> -->
+      <!-- <p class="mdl-tooltip">
+        Seu usuário é sua matrícula.
+      </p> -->
+      <!-- <a href=""> Esqueci minha senha!</a> -->
+
+      <div class="mdl-dialog__actions">
+        <button [disabled]="!loginForm.valid" (click)="logar()" class="center mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Acessar</button>
+      </div>
+    </form>
+
   </div>
 </div>

@@ -11,6 +11,7 @@ export class BasePage {
         localStorage.setItem('token', data.token);
         localStorage.setItem('usuario', data.usuario);
         this.autenticado = true;
+        this.logged.emit(this.autenticado);
     }
 
     isLogged() {

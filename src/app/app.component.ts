@@ -20,7 +20,7 @@ export class AppComponent extends BasePage {
   dislodge() {
     this.makeLogoff();
     this.verifyLogged = false;
-    this.router.navigate(['/pesquisa']);
+    this.router.navigate(['/login']);
   }
 
 }
