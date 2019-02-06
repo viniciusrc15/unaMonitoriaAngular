@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
   providedIn: 'root'
 })
 export class DisciplinaService {
-  urlApi = 'http://localhost:3000/api';
+  urlApi = 'https://cors-anywhere.herokuapp.com/http://apiunamonitoria-coo-app.umbler.net/api';
   constructor(private http: Http) { }
 
   getDisciplinas() {

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class BaseService extends BasePage {
-  urlApi = 'http://localhost:3000/api';
+  urlApi = 'https://cors-anywhere.herokuapp.com/http://apiunamonitoria-coo-app.umbler.net/api';
 
   constructor(private http: Http) {
     super();

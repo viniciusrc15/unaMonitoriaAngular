@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MonitoresService {
-  urlApi = 'http://localhost:3000/api';
+  urlApi = 'https://cors-anywhere.herokuapp.com/http://apiunamonitoria-coo-app.umbler.net/api';
   constructor(private http: Http) { }
 
   getMonitores() {
